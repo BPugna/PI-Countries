@@ -1,0 +1,31 @@
+img {
+    margin: 10px 0 0 0;
+    height: 125px;
+    width: 225px;
+}
+
+.containerCard {
+    border: 1px solid white;
+    height: 250px;
+    width: 245px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.199);
+}
+
+.countryName {
+    color: black;
+    font-family: 'Poppins';
+    text-shadow: 0 0 10px white;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.countryRegion {
+    color: black;
+    font-family: 'Poppins';
+    text-shadow: 0 0 10px white;
+    font-size: 16px;
+    font-weight: 600;
+}

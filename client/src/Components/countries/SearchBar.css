@@ -1,0 +1,8 @@
+.containerSearchBar {
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Poppins';
+}
