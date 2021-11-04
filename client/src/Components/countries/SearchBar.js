@@ -1,12 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import CountrySearch from "./CountrySearch";
+import {getCountries} from '../../redux/actions';
 import './SearchBar.css';
 
 function SearchBar(){
+
+    let dispatch = useDispatch();
+
+    function handleClick(e){
+        e.preventDefault();
+        dispatch(getCountries());
+    }
+
+
     return(
         <div className="containerSearchBar">
             <CountrySearch/>
-            
+            <button onClick={e => handleClick(e)} >Reset</button>
             <div>
                 <p>Filter by Region</p>
                 <select>

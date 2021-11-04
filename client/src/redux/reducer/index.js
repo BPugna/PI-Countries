@@ -1,6 +1,6 @@
 let initialState = {
     countries : [],
-    lastDetails : []
+    details : []
 }
 
 function reducer(state = initialState, action){
@@ -14,7 +14,7 @@ function reducer(state = initialState, action){
         case 'GET_COUNTRY_DETAILS':
             return {
                 ...state,
-                lastDetails: action.payload
+                details: action.payload
             }
         default:
         return state; 

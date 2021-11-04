@@ -1,14 +1,28 @@
 import React from "react";
+import './Pagination.css';
 
 
 
-function Pagination(){
+function Pagination({countriesPerPage, allCountries, paginado}){
 
+    const pageNumbers = [];
+
+    for(let i=1; i <= Math.ceil(allCountries/countriesPerPage); i++){
+        pageNumbers.push(i)
+    }
 
     return(
-        <div>
-            <h1>TODO LIST</h1>
-        </div>
+       <nav>
+           <ul className="pagination">
+               {pageNumbers.map(number => {
+                   return(
+                       <li className="listNumber">
+                           <input className="paginationButton" type="button" onClick={()=>paginado(number)} value={number} />
+                       </li>
+                   )
+               })}
+           </ul>
+       </nav>
     )
 }
 

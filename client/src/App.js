@@ -11,13 +11,13 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <div className="contenedor">
+          <div className="contenedor"> 
             <Button/>
           </div>
         </Route>
         <Route exact path="/countries">
         <SearchBar/>
-          <div className="contenedor">
+          <div className="contenedor"> 
             <Home/>
           </div>
         </Route>

@@ -1,0 +1,19 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    justify-content: center;
+
+}
+
+.listNumber {
+    padding: 0px 5px;
+}
+
+.paginationButton {
+    height: 25px;
+    width: 25px;
+}
