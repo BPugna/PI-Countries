@@ -1,14 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCountries } from "../../redux/actions";
 import Card from "./Card";
 import './Cards.css';
 
 
 function Cards(){
 
-
+    let dispatch = useDispatch();
     const allCountries = useSelector(state => state.countries);
 
+    useEffect(() => {
+        dispatch(getCountries())
+    },[]);
 
     if(allCountries){
             return(
@@ -16,7 +20,11 @@ function Cards(){
                     {
             allCountries.map(el => {
                 return (
-                    <Card key={el.name} name={el.name} flag={el.flag} region={el.region}/>
+                    <Card key={el.name}
+                        id={el.id}
+                        name={el.name}
+                        flag={el.flag}
+                        region={el.region}/>
                     )
                 })
             }

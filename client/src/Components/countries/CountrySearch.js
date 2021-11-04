@@ -5,7 +5,7 @@ function CountrySearch(){
     return(
         <div>
             <input placeholder="Search Country"/>
-            <button>Buscar</button>
+            <button>Search</button>
         </div>    
         )
 }

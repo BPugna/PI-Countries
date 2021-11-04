@@ -15,13 +15,13 @@ function App() {
             <Button/>
           </div>
         </Route>
-        <Route path="/countries">
+        <Route exact path="/countries">
         <SearchBar/>
           <div className="contenedor">
             <Home/>
           </div>
         </Route>
-        <Route path="/countries:id">
+        <Route path="/countries/:id">
           <div className="contenedor">
             <CountryDetail/>
           </div>

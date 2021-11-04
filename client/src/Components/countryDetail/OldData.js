@@ -1,8 +1,7 @@
 import React from "react";
-import './OldData.css';
-
 
 function OldData(){
+
     return(
         <div className="containerOD">
             <img src="#" alt="algo"/>

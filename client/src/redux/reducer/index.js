@@ -1,5 +1,6 @@
 let initialState = {
-    countries : []
+    countries : [],
+    lastDetails : []
 }
 
 function reducer(state = initialState, action){
@@ -7,11 +8,16 @@ function reducer(state = initialState, action){
         case 'GET_COUNTRIES':
             console.log("ESTE ES EL ESTADO",state);
             return {
-                ...state,
+                ...state, 
                 countries: action.payload
             }
-            default:
-            return state; 
+        case 'GET_COUNTRY_DETAILS':
+            return {
+                ...state,
+                lastDetails: action.payload
+            }
+        default:
+        return state; 
     }
 
 }

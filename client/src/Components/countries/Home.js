@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import getCountries from '../../redux/actions';
+import {getCountries} from '../../redux/actions';
 import Cards from './Cards';
 import Pagination from './Pagination';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,20 +9,19 @@ import './Home.css';
  
 function Home(){
 
-    let dispatch = useDispatch();
-    const allCountries = useSelector(state => state.countries);
+    let dispatch = useDispatch()
     
-    useEffect(() => {
-        dispatch(getCountries);
-        console.log("Dispatch dentro de useEffect")
-    },[allCountries]);
-    
-        return(
-            <div>
-                <Pagination/>
-                <Cards/>
-            </div>
-        )
+    function handleClick(e){
+        e.preventDefault();
+        dispatch(getCountries());
+    }
+    return(
+        <div>
+            <Pagination/>
+            <button onClick={e => handleClick(e)} >Reset</button>
+            <Cards/>
+        </div>
+    )
 
 }
 

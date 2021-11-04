@@ -6,7 +6,7 @@ function SearchBar(){
     return(
         <div className="containerSearchBar">
             <CountrySearch/>
-            <h4>Filters</h4>
+            
             <div>
                 <p>Filter by Region</p>
                 <select>
