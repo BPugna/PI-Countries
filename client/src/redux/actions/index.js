@@ -15,9 +15,9 @@ export function getCountries(){
     }
 }
 
-export function getCountriesDetails(id){
+export function getCountriesDetails(url){
     return async function(dispatch){
-        let detailRequest = await axios.get(`http://localhost:3001/countries/${id}`)
+        let detailRequest = await axios.get(`http://localhost:3001${url}`)
         return dispatch({
             type: GET_COUNTRY_DETAILS,
             payload: detailRequest.data

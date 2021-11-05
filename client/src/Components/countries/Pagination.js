@@ -2,7 +2,6 @@ import React from "react";
 import './Pagination.css';
 
 
-
 function Pagination({countriesPerPage, allCountries, paginado}){
 
     const pageNumbers = [];
@@ -15,9 +14,14 @@ function Pagination({countriesPerPage, allCountries, paginado}){
        <nav>
            <ul className="pagination">
                {pageNumbers.map(number => {
+                   
                    return(
-                       <li className="listNumber">
-                           <input className="paginationButton" type="button" onClick={()=>paginado(number)} value={number} />
+                       <li key={number} className="listNumber">
+                           <button className="paginationButton"
+                           type="button" 
+                           onClick={()=>paginado(number)}>
+                               {number}
+                            </button> 
                        </li>
                    )
                })}

@@ -1,36 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountriesDetails } from "../../redux/actions";
 import './OldData.css';
 
 
-function OldData(){
+function OldData({url}){
 
+    let dispatch = useDispatch()
 
-    // const [estado, useEstado] = useState([]);
-    // let dispatch = useDispatch()
-    // useEstado("el valor del param")
-    
-    // useEffect(()=>{
-    //     dispatch(getCountriesDetails(estado))
-    // },[dispatch])
+    useEffect(()=>{ 
+        dispatch(getCountriesDetails(url))
+    },[])
 
-    // return(
-    //     <div className="containerOD">
-    //         <img src={estado.flag} alt={`Bandera de ${estado.name}`}/>
-    //         <h1>{estado.name}</h1>
-    //         <h2>{estado.id}</h2>
-    //         <h2>{estado.region}</h2>
-    //     </div>
-    //     )
+    let OldDetails = useSelector(state => state.details)
+
 
     return(
         <div>
             <div className="containerOD">
-                <img src="#" alt="algo"/>
-                <h1>el.name</h1>
-                <h2>Codigo de 3 Letras</h2>
-                <h2>COntinente</h2>
+                <img src={OldDetails.flag} alt={`${OldDetails.name} flag`}/>
+                <h1>{OldDetails.name}</h1>
+                <h2>{OldDetails.id}</h2>
+                <h2>{OldDetails.region}</h2>
             </div>  
         </div>
     )

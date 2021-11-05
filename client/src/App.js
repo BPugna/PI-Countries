@@ -16,16 +16,12 @@ function App() {
           </div>
         </Route>
         <Route exact path="/countries">
-        <SearchBar/>
           <div className="contenedor"> 
+            <SearchBar/>
             <Home/>
           </div>
         </Route>
-        <Route path="/countries/:id">
-          <div className="contenedor">
-            <CountryDetail/>
-          </div>
-        </Route>
+        <Route path="/countries/:id" component={CountryDetail}/>
         <Route path="/activity">
           <div >
             <ActivityForm/>

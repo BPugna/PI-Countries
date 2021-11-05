@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCountriesDetails } from "../../redux/actions";
 import CountryActivities from "./CountryActivities";
 import './NewData.css';
 
-function NewData(){
+function NewData({url}){
+
+    let dispatch = useDispatch()
+    
+    useEffect(()=>{
+        dispatch(getCountriesDetails(url))
+    },[])
+    
+    let newDetails = useSelector(state => state.details)
+    
     return(
         <div className="containerND">
-            <h2>Codigo de 3 letras</h2>
-            <h2>Capital</h2>
-            <h3>SubRegion</h3>
-            <h3>Area mostrrla en km2</h3>
-            <h3>Poblacion</h3>
-            <CountryActivities/>
-        </div>
+            <h2>Alpha3: {newDetails.id}</h2>
+            <h2>Capital: {newDetails.capital}</h2>
+            <h3>Subregion: {newDetails.subregion}</h3>
+            <h3>Area (km2): {newDetails.area}</h3>
+            <h3>Population: {newDetails.population}</h3>
+            <CountryActivities data={newDetails.activities}/>
+        </div> 
     )
 }
 

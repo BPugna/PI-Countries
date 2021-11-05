@@ -1,32 +1,27 @@
-import React, { useEffect } from "react";
-import {useDispatch, useSelector} from 'react-redux';
-import { getCountriesDetails } from "../../redux/actions";
+import React from "react";
+// import {useDispatch, useSelector} from 'react-redux';
+// import { getCountriesDetails } from "../../redux/actions";
 import NewData from "./NewData";
 import OldData from "./OldData";
 
 
-function CountryDetail(){
+function CountryDetail(props){
 
-    let dispatch = useDispatch();
-    let data = useSelector(state => state.lastDetails)
-    console.log("ESTA ES LA DATA",data)
-    
-    useEffect(()=>{
-        dispatch(getCountriesDetails("ven"))
-    },[dispatch])
+    let url = props.match.url
+//! Intento de hacerlo sin usar estado, pero necesitaba las act
 
-    /*
-    TODO  
-        Tengo que traerme la parte de url referente al pais, se lo paso a getCountrisDetails
-    Todo 
-        Y lo mando por props a OldData y NewData para que lo muestren. 
+    // let matcher = url.split("/")[2].toUpperCase();
+    // let state = useSelector(state => state.countries);
+    // let searcher = state.filter(st => st.id === matcher);
 
-     */
+    // console.log("ESTE ES EL SEARCHER: ",searcher)
+
+
 
     return (
         <div>
-            <OldData/>
-            <NewData/>
+            <OldData url={url}/>
+            <NewData url={url}/>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 .contenedor {
-  height: 100vh;
-  width: 100vw;
-  background: url(https://wallpaperaccess.com/full/89347.jpg);
-  background-size: cover;
+  
+  background-image: url(https://wallpaperaccess.com/full/89347.jpg);
+  
+  background-size:contain;
+  background-attachment: fixed
 }
