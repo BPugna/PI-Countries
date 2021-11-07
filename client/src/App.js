@@ -3,8 +3,7 @@ import Button from './Components/main/Button';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import CountryDetail from './Components/countryDetail/CountryDetail';
 import ActivityForm from './Components/activity/ActivityForm';
-import Home from './Components/countries/Home';
-import SearchBar from './Components/countries/SearchBar';
+import Principal from './Components/countries/Principal';
 
 function App() {
   return (
@@ -17,8 +16,7 @@ function App() {
         </Route>
         <Route exact path="/countries">
           <div className="contenedor"> 
-            <SearchBar/>
-            <Home/>
+            <Principal/>
           </div>
         </Route>
         <Route path="/countries/:id" component={CountryDetail}/>

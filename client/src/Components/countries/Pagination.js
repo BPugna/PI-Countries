@@ -18,7 +18,6 @@ function Pagination({countriesPerPage, allCountries, paginado}){
                    return(
                        <li key={number} className="listNumber">
                            <button className="paginationButton"
-                           type="button" 
                            onClick={()=>paginado(number)}>
                                {number}
                             </button> 
