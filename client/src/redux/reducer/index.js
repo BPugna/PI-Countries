@@ -74,27 +74,22 @@ function reducer(state = initialState, action){
                 ...state,
                 countries: sortedArr
             };
-        // case 'SEARCH_ACTIVITY': 
-        //     console.log("ESTAMOS DENTRO DE SEARCH ACTIVITY (REDUCER)")
-
-        //             let activityFilter = state.allCountries.map(el => {
-
-        //                 if(el.activities.length){
-        //                     console.log("DENTRO DEL IF DEL REDUCER (FILTER)")
-        //                     el.activities.map(elm => {
-        //                         console.log("DENTRO DEL FILTER")
-        //                         console.log("ELM.NAME DELE REDUCER",elm.name)
-        //                         return(
-        //                             elm.name === action.payload
-        //                         )
-        //                         })
-        //                     }
-        //                 })
-        //                 console.log("ESTE ES EL ACTIVITY FILTER: ", activityFilter)
-        //     return {
-        //         ...state,
-        //         countries: activityFilter
-        //     }
+        case 'SEARCH_ACTIVITY': 
+            let searchCountries = state.allCountries.filter(el => {
+                return(
+                    el.activities.length > 0
+                )
+            })
+            let searchActivity = searchCountries.filter(el => {
+                console.log("searchCountries: ",searchCountries)
+                return(
+                    el.activities?.[0].name === action.payload
+                )
+            })
+            return {
+                ...state,
+                countries: searchActivity
+            }
         case 'FILTER_BY_ACTIVITY':
             return {
                 ...state,
