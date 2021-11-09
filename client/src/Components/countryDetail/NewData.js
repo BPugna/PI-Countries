@@ -7,15 +7,13 @@ import './NewData.css';
 function NewData({url}){
 
     let dispatch = useDispatch()
-    let country = useSelector(state => state.allCountries)
     
-    console.log("este es el countre: ",country )
     useEffect(()=>{
         dispatch(getCountriesDetails(url))
-    },[])
+    },)
     
     let newDetails = useSelector(state => state.details)
-    console.log("new details; ", newDetails)
+
     return(
         <div className="containerND">
             <h2>Alpha3: {newDetails.id}</h2>

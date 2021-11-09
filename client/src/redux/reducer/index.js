@@ -81,11 +81,9 @@ function reducer(state = initialState, action){
                 )
             })
             let searchActivity = searchCountries.filter(el => {
-                console.log("searchCountries: ",searchCountries)
                 return(
-                    el.activities?.[0].name === action.payload
-                )
-            })
+                    el.activities.find(elx => elx.name === action.payload)
+                )})
             return {
                 ...state,
                 countries: searchActivity

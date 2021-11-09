@@ -11,9 +11,12 @@ img {
     text-align: center;
     margin: 10px;
     border-radius: 6px;
+    /* backdrop-filter: blur(5px); */
     background-color: rgba(255, 255, 255, 0.199);
     text-decoration: none;
+    
 }
+
 
 .countryName {
     color: black;

@@ -81,7 +81,6 @@ export function filterByActivity(){
 export function postActivity(data){
     return async function(dispatch){
         let info = await axios.post("http://localhost:3001/activity",data)
-        console.log("INFO", info);
         return info;
     }
 }

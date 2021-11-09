@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom';
 
 function CountryActivities({data}){
 
-    console.log("data: ",data)
-
     
     return(
         <div className="containerCA">

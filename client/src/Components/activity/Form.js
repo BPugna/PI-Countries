@@ -7,8 +7,7 @@ import './Form.css';
 function Form(){
 
     let dispatch = useDispatch();
-    let activities = useSelector(state => state.activities);
-    console.log("ESTAS SON LAS ACTIVITIES DEL FORMULARIO: ",activities)
+
     let countries = useSelector(state => state.allCountries)
     let redirect = useHistory();
     const [form, setForm] = useState({
@@ -18,7 +17,6 @@ function Form(){
         season: "",
         countryId: []
     })
-    console.log("este es el form: ", form)
 
     function handleChange(e){
         setForm({
@@ -59,7 +57,7 @@ function Form(){
 
     useEffect(()=> {
         dispatch(filterByActivity())
-    }, [])
+    },[dispatch])
 
 
     return(

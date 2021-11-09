@@ -7,13 +7,12 @@ function CountrySearch(){
 
     let dispatch = useDispatch()
     const [searchCountry, setSearchCountry] = useState("");
-    // console.log("este es searchCountry: ",searchCountry)
 
     function changeHandler(e){
         e.preventDefault();
         setSearchCountry(e.target.value);
     }
-    console.log(searchCountry)
+
 
     function submitHandler(e){
         e.preventDefault()

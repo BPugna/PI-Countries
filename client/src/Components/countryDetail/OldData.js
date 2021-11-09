@@ -10,7 +10,7 @@ function OldData({url}){
 
     useEffect(()=>{ 
         dispatch(getCountriesDetails(url))
-    },[])
+    })
 
     let OldDetails = useSelector(state => state.details)
 

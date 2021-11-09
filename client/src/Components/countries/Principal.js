@@ -16,6 +16,7 @@ function Principal(){
     const [countriesPerPage] = useState(9); 
     const [order, setOrder] = useState('');
 
+    console.log("order: ", order)
     const indexOfLastCountry = currentPage * countriesPerPage
     const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
     const currenteCountries = allCountries.slice(indexOfFirstCountry, indexOfLastCountry);  

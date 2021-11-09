@@ -32,19 +32,11 @@ router.post('/', async (req,res) => {
                 id : countryId
             }
         })
-        // Relacion
         newActivity.addCountries(SearchId);
         res.send(newActivity);
     }catch(error){
         res.send(error)
     }
 });
-// TODO TRANSFERIRLE 0.5 BTC A FRANQUITO -
-
-// let dbTypeOfDiet = await Diets.findAll({
-//     el tipo de dieta lo creo con lo que ya tengo en mi db
-//     where: { name: diets },
-//   });
-//   newRecipe.addDiets(dbTypeOfDiet);
 
 module.exports = router;
