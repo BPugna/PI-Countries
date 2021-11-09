@@ -1,7 +1,8 @@
 let initialState = {
     countries : [],
     allCountries: [],
-    details : []
+    details : [],
+    activities: []
 }
 
 function reducer(state = initialState, action){
@@ -12,6 +13,19 @@ function reducer(state = initialState, action){
                 countries: action.payload,
                 allCountries: action.payload
             }
+        case 'SEARCH_BY_NAME':
+            return {
+                ...state,
+                countries: action.payload
+            }
+        case 'FILTER_BY_REGION':
+            let regionFilter = state.allCountries.filter(el => 
+                el.region === action.payload
+                )    
+            return {
+                ...state,
+                countries: regionFilter,
+            };
         case 'ORDER_BY_POPULATION':
             let populationSort = action.payload === 'asc' ?
                 state.countries.sort(function( a, b ){
@@ -60,10 +74,35 @@ function reducer(state = initialState, action){
                 ...state,
                 countries: sortedArr
             };
+        // case 'SEARCH_ACTIVITY': 
+        //     console.log("ESTAMOS DENTRO DE SEARCH ACTIVITY (REDUCER)")
 
-        case 'SEARCH_BY_NAME':
+        //             let activityFilter = state.allCountries.map(el => {
+
+        //                 if(el.activities.length){
+        //                     console.log("DENTRO DEL IF DEL REDUCER (FILTER)")
+        //                     el.activities.map(elm => {
+        //                         console.log("DENTRO DEL FILTER")
+        //                         console.log("ELM.NAME DELE REDUCER",elm.name)
+        //                         return(
+        //                             elm.name === action.payload
+        //                         )
+        //                         })
+        //                     }
+        //                 })
+        //                 console.log("ESTE ES EL ACTIVITY FILTER: ", activityFilter)
+        //     return {
+        //         ...state,
+        //         countries: activityFilter
+        //     }
+        case 'FILTER_BY_ACTIVITY':
             return {
-                search: action.payload
+                ...state,
+                activities: action.payload
+            }
+        case 'POST_ACTIVITY':
+            return {
+                ...state
             }
         case 'GET_COUNTRY_DETAILS':
             return {

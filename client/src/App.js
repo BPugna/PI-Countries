@@ -2,7 +2,7 @@ import './App.css';
 import Button from './Components/main/Button';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import CountryDetail from './Components/countryDetail/CountryDetail';
-import ActivityForm from './Components/activity/ActivityForm';
+import Form from './Components/activity/Form';
 import Principal from './Components/countries/Principal';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Route path="/countries/:id" component={CountryDetail}/>
         <Route path="/activity">
           <div >
-            <ActivityForm/>
+            <Form/>
           </div>
         </Route>
       </Switch>

@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const {Activity} = require('../db.js')
+const {Activity, Country} = require('../db.js')
 const router = Router();
 
 
@@ -19,22 +19,32 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/', async (req,res) => {
-    const { name, difficulty, duration, season} = req.body;
+    const { name, difficulty, duration, season, countryId} = req.body;
     try {
         const newActivity = await Activity.create({
             name,
             difficulty,
             duration,
-            season,
-            include : {
-                Activity
-            }
+            season
         });
-        res.send("newActivity");
+        let SearchId = await Country.findAll({
+            where: {
+                id : countryId
+            }
+        })
+        // Relacion
+        newActivity.addCountries(SearchId);
+        res.send(newActivity);
     }catch(error){
         res.send(error)
     }
 });
+// TODO TRANSFERIRLE 0.5 BTC A FRANQUITO -
 
+// let dbTypeOfDiet = await Diets.findAll({
+//     el tipo de dieta lo creo con lo que ya tengo en mi db
+//     where: { name: diets },
+//   });
+//   newRecipe.addDiets(dbTypeOfDiet);
 
 module.exports = router;

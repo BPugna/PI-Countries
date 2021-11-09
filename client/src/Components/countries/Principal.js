@@ -37,7 +37,7 @@ function Principal(){
         setCurrentePage(1);
         setOrder(`Population Order ${e.target.value}`);
     }
-
+    
     return(
         <>
             <SearchBar 

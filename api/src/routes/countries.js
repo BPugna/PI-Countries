@@ -64,7 +64,9 @@ TODO [ ] GET /countries:
                     });
             })
         };
-        let elAwait = await Country.findAll() 
+        let elAwait = await Country.findAll({
+            include: Activity
+        }) 
         return res.status(201).send(elAwait)
 })
 

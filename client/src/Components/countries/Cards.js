@@ -8,7 +8,7 @@ function Cards({currenteCountries}){
     
     let dispatch = useDispatch()
     // let allCountries = useSelector(state => state.countries);
-
+    
     useEffect(() => {
         dispatch(getCountries())
     },[dispatch]);

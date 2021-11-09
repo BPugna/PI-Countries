@@ -1,13 +1,23 @@
-import React from "react";
+// import React from "react";
+// import { useSelector } from "react-redux";
 
 
-function AddCountry(){
-    return (
-        <div>
-            <h1>TENGO QUE HACER EL ESPACIO DONDE VOY A AGREGAR LOS PAISES DE LA ACTIVITY</h1>
-        </div>
-    )
-}
+// function AddCountry(){
+
+    
+
+//     return (
+//         <select>
+//             {
+//                 countries.map(el => {
+//                     return(
+//                         <option key={el.name} value={el.id}>{el.name}</option>
+//                     )
+//                 })
+//             }
+//         </select>
+//     )
+// }
 
 
-export default AddCountry;
+// export default AddCountry;
