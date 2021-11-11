@@ -1,7 +1,87 @@
+.formPage {
+    background-image: url(https://wallpaperaccess.com/full/89347.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Poppins';
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+  }
+
+  .formContainer {
+      backdrop-filter: blur(2px);
+      border: 1px solid white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 5px;
+  }
+
+.linkForm {
+    color: rgba(255, 196, 0, 0.774);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.linkForm:hover {
+    color: white;
+    text-shadow: 0 0 10px red;
+}
+
+.activitySeason {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.countrySelector {
+    font-size: 14px;
+    font-family: 'Poppins';
+}
 
 .fieldset {
     margin: 10px;
     padding: 10px;
-    width: 200px;
+    font-weight: 600;
+}
+
+.createButton { 
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+    margin: 10px 0 0;
+    border-radius: 6px;
+    font-family: 'Poppins';
+}
+
+
+.createButton:hover {
+    background-color: transparent;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.ulForm {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.liForm {
+    list-style:none;
+}
+
+.liButton {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    color: red;
 }

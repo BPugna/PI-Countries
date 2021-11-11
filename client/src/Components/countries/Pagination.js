@@ -8,22 +8,24 @@ function Pagination({countriesPerPage, allCountries, paginado}){
 
     for(let i=1; i <= Math.ceil(allCountries/countriesPerPage); i++){
         pageNumbers.push(i)
-    }
-
+    } 
     return(
        <nav>
            <ul className="pagination">
-               {pageNumbers.map(number => {
-                   
-                   return(
-                       <li key={number} className="listNumber">
-                           <button className="paginationButton"
-                           onClick={()=>paginado(number)}>
-                               {number}
+               {  
+                pageNumbers.length === 1 ?
+                 <div></div> : 
+                 (pageNumbers.map(number => {
+                    return(
+                        <li key={number} className="listNumber">
+                            <button className="paginationButton"
+                            onClick={()=>paginado(number)}>
+                                {number}
                             </button> 
-                       </li>
-                   )
-               })}
+                        </li>
+                        )
+                    }))
+               }
            </ul>
        </nav>
     )

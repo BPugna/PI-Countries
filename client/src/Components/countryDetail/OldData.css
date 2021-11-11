@@ -1,5 +1,28 @@
 .containerOD {
-    background-color: rgba(248, 248, 248, 0.281);
+    margin: 20px;
+    backdrop-filter: blur(4px);
+    color: white;
+    font-family: 'Poppins';
     border: 1px solid white;
     padding: 10px;
+    width: 30vw;
+    border-radius: 5px;
+    box-shadow: 0 0 20px white;
 }
+
+.imgOD {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.699);
+}
+
+.nameOD {
+    text-shadow: 0 0 8px red;
+}
+
+.alphaOD {
+    text-shadow: 0 0 8px red;
+}
+
+.regionOD {
+    text-shadow: 0 0 8px rgba(81, 255, 0, 0.61);
+}
+

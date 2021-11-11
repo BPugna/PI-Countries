@@ -11,20 +11,25 @@ function Cards({currenteCountries}){
     
     useEffect(() => {
         dispatch(getCountries())
-    },[dispatch]);
-
+    },[dispatch]); 
+ 
     return(
     <div className="containerCards">
                 {
-        currenteCountries.map(el => {
-            return (
-                <Card key={el.name}
-                    id={el.id}
-                    name={el.name}
-                    flag={el.flag}
-                    region={el.region}/>
-                )
-            })
+                    currenteCountries.length === 0 ? (
+                        <h1 className="messageError">Country not found</h1> 
+                    )
+         : (
+            currenteCountries.map(el => {
+                return (
+                    <Card key={el.name}
+                        id={el.id}
+                        name={el.name}
+                        flag={el.flag}
+                        region={el.region}/>
+                    )
+                })
+        )
         }
     </div>
     )

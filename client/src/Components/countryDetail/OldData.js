@@ -10,18 +10,18 @@ function OldData({url}){
 
     useEffect(()=>{ 
         dispatch(getCountriesDetails(url))
-    })
+    },[])
 
     let OldDetails = useSelector(state => state.details)
 
 
-    return(
+    return( 
         <div>
             <div className="containerOD">
-                <img src={OldDetails.flag} alt={`${OldDetails.name} flag`}/>
-                <h1>{OldDetails.name}</h1>
-                <h2>{OldDetails.id}</h2>
-                <h2>{OldDetails.region}</h2>
+                <img className="imgOD" src={OldDetails.flag} alt={`${OldDetails.name} flag`}/>
+                <h1 className="nameOD">{OldDetails.name}</h1>
+                <h2 className="alphaOD">{OldDetails.id}</h2>
+                <h2 className="regionOD">{OldDetails.region}</h2>
             </div>  
         </div>
     )

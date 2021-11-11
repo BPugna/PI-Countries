@@ -11,39 +11,40 @@ function Principal(){
 
     let dispatch = useDispatch();
     const allCountries = useSelector(state => state.countries);
+    let countriesPerPage = 9;
     
     const [currentPage, setCurrentePage] = useState(1);
-    const [countriesPerPage] = useState(9); 
-    const [order, setOrder] = useState('');
+    const [order, setOrder] = useState('all');
 
-    console.log("order: ", order)
     const indexOfLastCountry = currentPage * countriesPerPage
     const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
     const currenteCountries = allCountries.slice(indexOfFirstCountry, indexOfLastCountry);  
 
-    const paginado = (pageNumber) => {
+
+    function paginado(pageNumber){
         setCurrentePage(pageNumber)
     }
 
     function handleSortName(e){
         e.preventDefault(e);
         dispatch(orderByName(e.target.value));
-        setCurrentePage(1);
         setOrder(`Order ${e.target.value}`);
+        setCurrentePage(1);
     }
 
     function handleSortPopulation(e){
         e.preventDefault(e);
         dispatch(orderByPopulation(e.target.value));
-        setCurrentePage(1);
         setOrder(`Population Order ${e.target.value}`);
+        setCurrentePage(1);
     }
     
     return(
-        <>
+        < div className="contenedor" >
             <SearchBar 
                 handleSortName={handleSortName} 
                 handleSortPopulation={handleSortPopulation}
+                setCurrentePage = {setCurrentePage}
             />
             <Pagination 
                 countriesPerPage = {countriesPerPage}
@@ -53,7 +54,7 @@ function Principal(){
             <Cards
                 currenteCountries = {currenteCountries}
             />
-        </>
+        </div>
     )
 }
 

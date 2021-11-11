@@ -17,12 +17,13 @@ router.get('/', async (req, res, next)=>{
         const match = await Country.findAll({ 
             where : {
                 name : {
-                    //No sensitive -> like es sensitive
                     [Op.iLike] : `%${name}%`
                 }
             }
         })
-        if(match.length){
+        
+        //TODO MODIFIQUE EL if(match.length)
+        if(match !== 0){
             return res.send(match)
         } else {
             return res.status(404).send("No se encontro el pais buscado");

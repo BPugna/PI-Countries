@@ -3,5 +3,11 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    
+    margin: 0px;
+    padding: 0px;
+} 
+
+.messageError {
+    color: white;
+    text-shadow: 0 0 10px red; 
 }

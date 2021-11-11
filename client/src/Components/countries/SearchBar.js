@@ -5,7 +5,7 @@ import { filterByActivity, filterByRegion, getCountries, searchActivity} from '.
 import './SearchBar.css';
 import { Link } from 'react-router-dom';
 
-function SearchBar({handleSortName, handleSortPopulation}){
+function SearchBar({handleSortName, handleSortPopulation, setCurrentePage}){
 
     
 
@@ -34,6 +34,7 @@ function SearchBar({handleSortName, handleSortPopulation}){
     function handleFilterRegion(e){
         e.preventDefault();
         dispatch(filterByRegion(e.target.value))
+        setCurrentePage(1)
     }
 
     function handleOnChange(e){
@@ -42,11 +43,15 @@ function SearchBar({handleSortName, handleSortPopulation}){
     }
     return(
         <div className="containerSearchBar">
+
             <CountrySearch/>
-            <button onClick={e=>handleClick(e)}>Reset</button>
-            <div>
-                <p>Filter by Region</p>
-                <select onChange={e => handleFilterRegion(e)}>
+
+            <button className="resetButton" onClick={e=>handleClick(e)}>Reset</button>
+
+            <div className="containerFilter">
+                <p className="filtersName">Filter by Region</p>
+                <select className="filterInput" onChange={e => handleFilterRegion(e)}>
+                    <option value="All">All</option>
                     <option value="Africa">Africa</option>
                     <option value="Americas">Americas</option>
                     <option value="Asia">Asia</option>
@@ -54,34 +59,49 @@ function SearchBar({handleSortName, handleSortPopulation}){
                     <option value="Oceania">Oceania</option>
                 </select>
             </div>
-            <div>
-                <p>Filter by Population</p>
-                <select onChange={e=>handleSortPopulation(e)}>
+
+            <div className="containerFilter">
+                <p className="filtersName" >Filter by Population</p>
+                <select className="filterInput" onChange={e=>handleSortPopulation(e)}>
+                    <option></option>
                     <option value="asc">ASC</option>
                     <option value="desc">DESC</option>
                 </select>
             </div>
-            <div>
-                <p>Filter by name</p>
-                <select onChange={e => handleSortName(e)}>
+
+            <div className="containerFilter">
+                <p className="filtersName">Filter by name</p>
+                <select className="filterInput" onChange={e => handleSortName(e)}>
+                    <option></option>
                     <option value="asc">A-Z</option>
                     <option value="desc">Z-A</option>
                 </select>
             </div>
+            
             <div>
-                <p>Filter by Activity</p>
-                <select onChange={e => handleOnChange(e)}>
-                    {
-                        nameArrays.map(el => {
-                            return (
+                {
+                    nameArrays.length === 0 ?
+                    <div></div> :
+                    (
+                    <div className="containerFilter">
+                        <p className="filtersName">Filter by Activity</p>
+                        <select className="filterInput" onChange={e => handleOnChange(e)}>
+                        <option></option>
+                            {
+                            nameArrays.map(el => {
+                                return (
                                 <option key={el} value={el}> {el} </option>
-                            )
-                        })
-                    }
-                </select>
+                                    )
+                                })
+                            }
+                        </select>
+                    </div> 
+                    )
+                }
+                
             </div>
             <Link to="/activity">
-                <button>Create Activity</button>
+                <button className="activityButton">Create Activity</button>
             </Link>
         </div>
     )

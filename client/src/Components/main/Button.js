@@ -8,7 +8,9 @@ function Button(){
     return(
         <div className="buttonContainer">
             <button className="button">
-                <Link className="link" to="/countries">Enter</Link>
+                <Link className="link" to="/countries">
+                    Enter
+                </Link>
             </button>
         </div>
     )

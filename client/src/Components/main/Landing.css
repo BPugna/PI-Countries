@@ -1,7 +1,5 @@
 .contenedor {
     background-image: url(https://wallpaperaccess.com/full/89347.jpg);
     background-size:cover;
-    background-attachment: fixed;
-    min-width: 90vw;
-    min-height: 100vh;
+    background-attachment: fixed
   }

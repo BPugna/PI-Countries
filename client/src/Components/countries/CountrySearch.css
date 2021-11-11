@@ -1,0 +1,23 @@
+.inputSearcher {
+    height: 20px;
+    width: 150px;
+    color: grey;
+    border-radius: 5px;
+    font-weight: 600;
+    font-family: 'Poppins';
+}
+
+.searchButton {
+    font-weight: 600;
+    font-family: 'Poppins';
+    border: none;
+    border-radius: 5px;
+}
+
+.searchButton:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-shadow: 0 0 8px red;
+}

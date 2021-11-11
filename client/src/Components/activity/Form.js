@@ -44,15 +44,34 @@ function Form(){
     function handleSubmit(e){
         e.preventDefault();
         dispatch(postActivity(form));
-        alert("Activity creada")
-        setForm({
-            name: "",
-            difficulty: "",
-            duration: "",
-            season: "",
-            countries: []
+        if(form.difficulty > 5){
+            alert('Difficulty must be lower than 5')
+        }else if(form.difficulty < 1){
+            alert('Difficulty must be greater than 0')
+        }else {
+            alert("Activity created successfully")
+            setForm({
+                name: "",
+                difficulty: "",
+                duration: "",
+                season: "",
+                countries: []
+            })
+            redirect.push('/countries');
+        }
+    }
+
+    function onListClick(e){
+        e.preventDefault();
+        let filtered = form.countryId.filter(el => {
+            return(
+                el !== e.target.name
+            )
         })
-        redirect.push('/countries');
+        setForm({
+            ...form,
+            countryId : filtered
+        })
     }
 
     useEffect(()=> {
@@ -61,82 +80,115 @@ function Form(){
 
 
     return(
-        <div>
+        <div className="formPage">
+            <div className="formContainer">
+                <Link className="linkForm" to="/countries">Back</Link>
 
-                <Link to="/countries">Back</Link>
+                <form onSubmit={e => handleSubmit(e)}>
+                    <fieldset className="fieldset">
 
-            <form onSubmit={e => handleSubmit(e)}>
-                <fieldset className="fieldset">
-                    <legend> Create your Activity </legend>
-                    <label>Name</label>
-                    <input type="text" value={form.name} name="name" onChange={e=> handleChange(e)} required/>
-                    <br/>
-                    <label>Difficulty</label>
-                    <input type="number" value={form.difficulty} name="difficulty" onChange={e=> handleChange(e)} required/>
-                    <br/>
-                    <label>Duration</label>
-                    <input type="number" value={form.duration} name="duration" onChange={e=> handleChange(e)} required/>
-                    <br/>
-                </fieldset>
+                        <legend> Create your Activity </legend>
+                        <label>Name</label>
+                        <input type="text" 
+                        value={form.name} 
+                        name="name" 
+                        onChange={e=> handleChange(e)} 
+                        required/>
+                        <br/>
+                        <label>Difficulty</label>
+                        <input 
+                        type="number" 
+                        value={form.difficulty}
+                        name="difficulty" 
+                        onChange={e=> handleChange(e)} 
+                        max="5"
+                        min="1"
+                        required/>
+                        <br/>
+                        <label>Duration</label>
+                        <input 
+                        type="number" 
+                        value={form.duration} 
+                        name="duration" 
+                        onChange={e=> handleChange(e)} 
+                        max="24"
+                        min="0"
+                        required/>
+                        <br/>
+                    </fieldset>
 
-                <fieldset className="fieldset">
-                    <legend>Activity Season </legend>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="Summer"
-                        value="Summer"
-                        onClick={e => handleCheck(e)}
-                        />
-                        Summer</label>
-                        <label>
-                        <input
-                        type="checkbox"
-                        name="Winter"
-                        value="Winter"
-                        onClick={e => handleCheck(e)}
-                        />
-                        Winter</label>
-                        <label>
-                        <input
-                        type="checkbox"
-                        name="Autumn"
-                        value="Autumn"
-                        onClick={e => handleCheck(e)}
-                        />
-                        Autumn</label>
-                        <label>
-                        <input
-                        type="checkbox"
-                        name="Spring"
-                        value="Spring"
-                        onClick={e => handleCheck(e)}
-                        />
-                        Spring</label>
-                </fieldset>
-                <select onChange={e => handleSelect(e)}>
-                {
-                    countries.map(el => {
-                        return(
-                            <option  key={el.name} value={el.id}>{el.name}</option>
-                        )
-                    })
-                }
-                </select>
-                <ul>
                     
+                    <fieldset className="activitySeason">
+                        <legend>Activity Season </legend>
+                        <label>
+                            <input
+                            type="radio"
+                            id="Summer"
+                            name="season"
+                            value="Summer"
+                            onClick={e => handleCheck(e)}
+                            required
+                            />
+                            Summer
+                        </label>
+                        <label>
+                            <input
+                            type="radio"
+                            id="Winter"
+                            name="season"
+                            value="Winter"
+                            onClick={e => handleCheck(e)}
+                            />
+                            Winter
+                        </label>
+                        <label>
+                            <input
+                            type="radio"
+                            id="Autumn"
+                            name="season"
+                            value="Autumn"
+                            onClick={e => handleCheck(e)}
+                            />
+                            Autumn
+                        </label>
+                        <label >
+                            <input 
+                            type="radio"
+                            id="Spring"
+                            name="season"
+                            value="Spring"
+                            onClick={e => handleCheck(e)}
+                            />
+                            Spring
+                        </label>
+                    </fieldset>
+                    <select className="countrySelector" onChange={e => handleSelect(e)}>
                     {
-                        form.countryId.map(el => {
+                        countries.map(el => {
                             return(
-                                <li key={el}>
-                                    {el}
-                                </li>
+                                <option  key={el.name} value={el.id}>{el.name}</option>
                             )
                         })
                     }
-                </ul>
-                <button type="submit">Create!</button>        
-            </form>
+                    </select>
+                    <ul className="ulForm">
+                        
+                        {
+                            form.countryId.map(el => {
+                                return(
+                                    <div className="divForm" key={el}>
+                                        <li className="liForm">
+                                            {el}
+                                        </li>
+                                        <input className="liButton" onClick={e => onListClick(e)} type="button" value="X" name={el}/>
+                                    </div>
+                                )
+                            })
+                        }
+                    </ul>
+                    <button className="createButton" type="submit">Create ACtivity</button>        
+                </form>
+            </div>
         </div>
     )
 }

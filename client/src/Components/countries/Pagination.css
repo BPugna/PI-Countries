@@ -6,7 +6,6 @@
     background-color: transparent;
     color: white;
     justify-content: center;
-
 }
 
 .listNumber {
@@ -14,10 +13,22 @@
 }
 
 .paginationButton {
+    color: white;
+    font-weight: 800;
     height: 25px;
     width: 25px;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 4px;
+    background-color: transparent;
+    font-family: 'Poppins';
+}
+.paginationButton:hover {
+    background-color: rgba(128, 128, 128, 0.719);
 }
 
 .paginationButton:focus {
-    background-color: greenyellow;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.719);
+    text-shadow: 0 0 10px red;
 }

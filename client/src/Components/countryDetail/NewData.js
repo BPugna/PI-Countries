@@ -8,19 +8,19 @@ function NewData({url}){
 
     let dispatch = useDispatch()
     
-    useEffect(()=>{
+    useEffect(()=>{ 
         dispatch(getCountriesDetails(url))
-    },)
+    },[])
     
     let newDetails = useSelector(state => state.details)
 
     return(
         <div className="containerND">
-            <h2>Alpha3: {newDetails.id}</h2>
-            <h2>Capital: {newDetails.capital}</h2>
-            <h3>Subregion: {newDetails.subregion}</h3>
-            <h3>Area (km2): {newDetails.area}</h3>
-            <h3>Population: {newDetails.population}</h3>
+            <h2 className="alphaND">Alpha3: <p className="pStyles">{newDetails.id}</p></h2>
+            <h2 className="capitalND">Capital: <p className="pStyles">{newDetails.capital}</p></h2>
+            <h3 className="subregionND">Subregion: <p className="pStyles">{newDetails.subregion}</p></h3>
+            <h3 className="areaND">Area:<p className="pStyles">{newDetails.area} (km2)</p></h3>
+            <h3 className="populationND">Population: <p className="pStyles">{newDetails.population}</p></h3>
             <CountryActivities data={newDetails.activities}/>
         </div> 
     )

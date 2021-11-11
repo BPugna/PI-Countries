@@ -7,20 +7,20 @@ function CountryActivities({data}){
     
     return(
         <div className="containerCA">
-            <h1>Actividades del pais</h1>
+            <h1 className="titleCA">Country Activities</h1> 
             {
                 data?.map(act => {
                     return(
-                        <div key={act.name}>
-                            <h3>{act.name}</h3>
-                            <h4>{act.difficulty}</h4>
-                            <h4>{act.duration}</h4>
-                            <h4>{act.season}</h4>
+                        <div className="caractCA" key={act.name}>
+                            <h3>Name: {act.name}</h3>
+                            <h4>Difficulty: {act.difficulty}</h4>
+                            <h4>Duration: {act.duration} hrs</h4>
+                            <h4>Season: {act.season}</h4>
                         </div>
                     )
                 }) 
             }
-            <Link to="/activity">Crear Actividad</Link>
+            <Link className="linkCA" to="/activity">Crear Actividad</Link>
         </div>
     )
 

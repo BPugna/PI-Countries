@@ -6,24 +6,36 @@ img {
 
 .containerCard {
     border: 1px solid white;
-    height: 250px;
+    height: 300px;
     width: 245px;
     text-align: center;
-    margin: 10px;
+    margin: 40px;
     border-radius: 6px;
-    /* backdrop-filter: blur(5px); */
     background-color: rgba(255, 255, 255, 0.199);
     text-decoration: none;
-    
+
 }
 
-
+.containerCard:hover {
+    transform: scale(105%);
+    box-shadow: 0 0 20px white;
+}
+.containerCard:active {
+    transform: scale(95%);
+    box-shadow: 0 0 10px white;
+}
+ 
 .countryName {
     color: black;
     font-family: 'Poppins';
     text-shadow: 0 0 10px white;
     font-size: 20px;
     font-weight: 800;
+}
+
+.countryFlag {
+    box-shadow: 0 0 5px white;
+
 }
 
 .countryRegion {

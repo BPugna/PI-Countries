@@ -1,0 +1,24 @@
+.containerDetails {
+    background-image: url(https://wallpaperaccess.com/full/89347.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+.dataContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 40px 0 0;
+}
+.linkDetails {
+    color: rgba(255, 196, 0, 0.774);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.linkDetails:hover {
+    color: white;
+    text-shadow: 0 0 10px red;
+}
