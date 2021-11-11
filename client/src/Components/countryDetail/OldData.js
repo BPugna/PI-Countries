@@ -20,7 +20,6 @@ function OldData({url}){
             <div className="containerOD">
                 <img className="imgOD" src={OldDetails.flag} alt={`${OldDetails.name} flag`}/>
                 <h1 className="nameOD">{OldDetails.name}</h1>
-                <h2 className="alphaOD">{OldDetails.id}</h2>
                 <h2 className="regionOD">{OldDetails.region}</h2>
             </div>  
         </div>
