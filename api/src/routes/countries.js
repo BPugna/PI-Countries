@@ -12,6 +12,7 @@ const { Op } = require('sequelize');
 
 
 router.get('/', async (req, res, next)=>{
+    
     const { name } = req.query;
     if(name){
         const match = await Country.findAll({ 
@@ -21,8 +22,6 @@ router.get('/', async (req, res, next)=>{
                 }
             }
         })
-        
-        //TODO MODIFIQUE EL if(match.length)
         if(match !== 0){
             return res.send(match)
         } else {

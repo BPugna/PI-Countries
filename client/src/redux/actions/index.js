@@ -9,7 +9,7 @@ const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION';
 const GET_COUNTRY_DETAILS = 'GET_COUNTRY_DETAILS';
 const SEARCH_ACTIVITY = 'SEARCH_ACTIVITY';
 
- 
+
 export function getCountries(){
     return async function(dispatch){
         try{

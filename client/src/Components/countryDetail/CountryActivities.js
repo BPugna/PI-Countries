@@ -12,7 +12,7 @@ function CountryActivities({data}){
                 data?.map(act => {
                     return(
                         <div className="caractCA" key={act.name}>
-                            <h3>Name: {act.name}</h3>
+                            <h3 className="actName">Name: {act.name}</h3>
                             <h4>Difficulty: {act.difficulty}</h4>
                             <h4>Duration: {act.duration} hrs</h4>
                             <h4>Season: {act.season}</h4>

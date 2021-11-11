@@ -44,21 +44,15 @@ function Form(){
     function handleSubmit(e){
         e.preventDefault();
         dispatch(postActivity(form));
-        if(form.difficulty > 5){
-            alert('Difficulty must be lower than 5')
-        }else if(form.difficulty < 1){
-            alert('Difficulty must be greater than 0')
-        }else {
-            alert("Activity created successfully")
-            setForm({
-                name: "",
-                difficulty: "",
-                duration: "",
-                season: "",
-                countries: []
-            })
-            redirect.push('/countries');
-        }
+        alert("Activity created successfully")
+        setForm({
+            name: "",
+            difficulty: "",
+            duration: "",
+            season: "",
+            countries: []
+        })
+        redirect.push('/countries');
     }
 
     function onListClick(e){
@@ -73,6 +67,7 @@ function Form(){
             countryId : filtered
         })
     }
+
 
     useEffect(()=> {
         dispatch(filterByActivity())
@@ -95,6 +90,7 @@ function Form(){
                         onChange={e=> handleChange(e)} 
                         required/>
                         <br/>
+
                         <label>Difficulty</label>
                         <input 
                         type="number" 
@@ -105,6 +101,7 @@ function Form(){
                         min="1"
                         required/>
                         <br/>
+
                         <label>Duration</label>
                         <input 
                         type="number" 
@@ -163,6 +160,7 @@ function Form(){
                         </label>
                     </fieldset>
                     <select className="countrySelector" onChange={e => handleSelect(e)}>
+                    <option>-</option>
                     {
                         countries.map(el => {
                             return(

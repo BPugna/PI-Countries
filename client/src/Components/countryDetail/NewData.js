@@ -20,7 +20,7 @@ function NewData({url}){
             <h2 className="capitalND">Capital: <p className="pStyles">{newDetails.capital}</p></h2>
             <h3 className="subregionND">Subregion: <p className="pStyles">{newDetails.subregion}</p></h3>
             <h3 className="areaND">Area:<p className="pStyles">{newDetails.area} (km2)</p></h3>
-            <h3 className="populationND">Population: <p className="pStyles">{newDetails.population}</p></h3>
+            <h3 className="populationND">Population: <p className="pStyles">{newDetails.population} Pop.</p></h3>
             <CountryActivities data={newDetails.activities}/>
         </div> 
     )

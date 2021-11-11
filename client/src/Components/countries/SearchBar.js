@@ -12,14 +12,11 @@ function SearchBar({handleSortName, handleSortPopulation, setCurrentePage}){
     let dispatch = useDispatch();
     let activities = useSelector(state => state.activities);
 
-    // console.log("ACTIVITIES: ", activities)
-
     let nameArrays = [];
     for(let i=0;i<activities.length;i++){
         if(nameArrays.indexOf(activities[i].name) === -1)
         nameArrays.push(activities[i].name);
     }
-    // console.log("NAME ARRAYS: ", nameArrays)
 
     useEffect(() => {
         dispatch(filterByActivity())
@@ -52,6 +49,7 @@ function SearchBar({handleSortName, handleSortPopulation, setCurrentePage}){
                 <p className="filtersName">Filter by Region</p>
                 <select className="filterInput" onChange={e => handleFilterRegion(e)}>
                     <option value="All">All</option>
+                    <option value="Antarctic">Antarctic</option>
                     <option value="Africa">Africa</option>
                     <option value="Americas">Americas</option>
                     <option value="Asia">Asia</option>
@@ -63,7 +61,7 @@ function SearchBar({handleSortName, handleSortPopulation, setCurrentePage}){
             <div className="containerFilter">
                 <p className="filtersName" >Filter by Population</p>
                 <select className="filterInput" onChange={e=>handleSortPopulation(e)}>
-                    <option></option>
+                    <option>-</option>
                     <option value="asc">ASC</option>
                     <option value="desc">DESC</option>
                 </select>
@@ -72,7 +70,7 @@ function SearchBar({handleSortName, handleSortPopulation, setCurrentePage}){
             <div className="containerFilter">
                 <p className="filtersName">Filter by name</p>
                 <select className="filterInput" onChange={e => handleSortName(e)}>
-                    <option></option>
+                    <option>-</option>
                     <option value="asc">A-Z</option>
                     <option value="desc">Z-A</option>
                 </select>
@@ -86,7 +84,7 @@ function SearchBar({handleSortName, handleSortPopulation, setCurrentePage}){
                     <div className="containerFilter">
                         <p className="filtersName">Filter by Activity</p>
                         <select className="filterInput" onChange={e => handleOnChange(e)}>
-                        <option></option>
+                        <option>-</option>
                             {
                             nameArrays.map(el => {
                                 return (

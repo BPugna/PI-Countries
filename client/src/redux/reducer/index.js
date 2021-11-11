@@ -31,15 +31,13 @@ function reducer(state = initialState, action){
         case 'ORDER_BY_POPULATION':
             let populationSort = action.payload === 'asc' ?
                 state.countries.sort(( a, b )=>{
-                    if(a.population > b.population)return 1;
+                    if(a.population > b.population)return  1;
                     if(b.population > a.population)return -1;
                     return 0;
                 }) :
                 state.countries.sort(( a, b )=>{
-                    if(a.population > b.population)
-                        return -1;
-                    if(b.population > a.population)
-                        return 1;
+                    if(a.population > b.population) return -1;
+                    if(b.population > a.population) return 1;
                     return 0;
                 })
             return {
@@ -49,7 +47,7 @@ function reducer(state = initialState, action){
         case 'ORDER_BY_NAME':
             let sortedArr = action.payload === 'asc' ?
                 state.countries.sort(( a, b )=> {
-                    if(a.name > b.name) return 1;
+                    if(a.name > b.name) return  1;
                     if(b.name > a.name) return -1;
                     return 0;
                 }) :
