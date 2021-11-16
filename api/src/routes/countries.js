@@ -48,6 +48,8 @@ router.get('/', async (req,res) => {
                     subregion: country.subregion,
                     area: country.area,
                     population: country.population,
+                    latitude: country.latlng?.[0],
+                    longitude: country.latlng?.[1]
                 }
                 });
         })

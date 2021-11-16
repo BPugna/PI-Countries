@@ -44,6 +44,12 @@ module.exports = (sequelize) => {
     },
     population: {
       type: DataTypes.INTEGER,
+    },
+    latitude: {
+      type: DataTypes.INTEGER,
+    },
+    longitude: {
+      type: DataTypes.INTEGER,
     }
   },{
     timestamps: false
