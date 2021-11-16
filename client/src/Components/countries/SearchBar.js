@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function SearchBar({handleSortName, handleSortPopulation, setCurrentePage}){
 
     
-
+    
     let dispatch = useDispatch();
     let activities = useSelector(state => state.activities);
 
