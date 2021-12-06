@@ -10,7 +10,7 @@
 .searchButton {
     font-weight: 600;
     font-family: 'Poppins';
-    border: none;
+    border: 1px solid white;
     border-radius: 5px;
 }
 

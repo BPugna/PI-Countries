@@ -13,7 +13,8 @@
     margin: 40px 0 0;
 }
 .linkDetails {
-    color: rgba(255, 196, 0, 0.774);
+    color: white;
+    text-shadow: 0 0 10px cornflowerblue;
     font-size: 24px;
     font-weight: 600;
 }

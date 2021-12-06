@@ -11,31 +11,32 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 
 .alphaND {
     color: white;
-    text-shadow: 0 0 8px rgba(81, 255, 0, 0.61);
+    text-shadow: 0 0 8px cornflowerblue;
     font-size: 20px;
 }
 
 .capitalND {
-    text-shadow: 0 0 8px rgba(81, 255, 0, 0.61);
+    text-shadow: 0 0 8px cornflowerblue;
     font-size: 20px;
 }
 
 .subregionND {
-    text-shadow: 0 0 8px rgba(81, 255, 0, 0.61);
+    text-shadow: 0 0 8px cornflowerblue;
     font-size: 20px;
 }
 
 .areaND {
-    text-shadow: 0 0 8px rgba(81, 255, 0, 0.61);
+    text-shadow: 0 0 8px cornflowerblue;
     font-size: 20px;
 }
 
 .populationND {
-    text-shadow: 0 0 8px rgba(81, 255, 0, 0.61);
+    text-shadow: 0 0 8px cornflowerblue;
     font-size: 20px;
 }
 

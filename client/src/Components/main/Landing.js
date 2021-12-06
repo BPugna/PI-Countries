@@ -4,7 +4,8 @@ import './Landing.css';
 
 function Landing(){
     return(
-        <div className="contenedor">
+        <div className="contenedorLP">
+            <h1 className="titleLP">Welcome to Countries PI</h1>
             <Button/>
         </div>
     )

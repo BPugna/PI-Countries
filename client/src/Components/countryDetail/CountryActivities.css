@@ -29,6 +29,6 @@
 }
 
 .actName {
-    color: black;
-    text-shadow: 0 0 10px greenyellow;
+    color: white;
+    text-shadow: 0 0 10px rgb(122, 122, 197);
 }
