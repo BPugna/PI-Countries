@@ -9,7 +9,7 @@ function Button(){
         <div className="buttonContainer">
             <button className="button">
                 <Link className="link" to="/countries">
-                    Enter
+                    Explore
                 </Link>
             </button>
         </div>

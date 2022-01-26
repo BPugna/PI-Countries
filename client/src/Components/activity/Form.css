@@ -48,6 +48,9 @@
     padding: 10px;
     font-weight: 600;
 }
+.labels {
+    margin: 0 10px 0 0;
+}
 
 .createButton { 
     border: 2px solid white;

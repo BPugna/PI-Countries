@@ -20,7 +20,7 @@ function CountryActivities({data}){
                     )
                 }) 
             }
-            <Link className="linkCA" to="/activity">Crear Actividad</Link>
+            <Link className="linkCA" to="/activity">Create new activity</Link>
         </div>
     )
 

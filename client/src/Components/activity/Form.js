@@ -9,6 +9,12 @@ function Form(){
     let dispatch = useDispatch();
 
     let countries = useSelector(state => state.allCountries)
+    countries = countries.sort(( a, b )=> {
+        if(a.name > b.name) return  1;
+        if(b.name > a.name) return -1;
+        return 0;
+    })
+
     let redirect = useHistory();
     const [form, setForm] = useState({
         name: "",
@@ -83,7 +89,7 @@ function Form(){
                     <fieldset className="fieldset">
 
                         <legend> Create your Activity </legend>
-                        <label>Name</label>
+                        <label className="labels">Name</label>
                         <input type="text" 
                         value={form.name} 
                         name="name" 
@@ -91,7 +97,7 @@ function Form(){
                         required/>
                         <br/>
 
-                        <label>Difficulty</label>
+                        <label className="labels">Difficulty</label>
                         <input 
                         type="number" 
                         value={form.difficulty}
@@ -102,7 +108,7 @@ function Form(){
                         required/>
                         <br/>
 
-                        <label>Duration</label>
+                        <label className="labels">Duration</label>
                         <input 
                         type="number" 
                         value={form.duration} 
@@ -184,7 +190,7 @@ function Form(){
                             })
                         }
                     </ul>
-                    <button className="createButton" type="submit">Create ACtivity</button>        
+                    <button className="createButton" type="submit">Create Activity</button>        
                 </form>
             </div>
         </div>
